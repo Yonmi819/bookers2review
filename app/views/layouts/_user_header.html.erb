@@ -1,12 +1,16 @@
 <li class="nav-item">
- <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+ <%= link_to root_path, class: 'nav-link text-light' do %><i class="fas fa-home"></i>Home
+ <% end %>
 </li>
 <li class="nav-item">
- <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+ <%= link_to users_path, class: 'nav-link text-light' do %><i class="fas fa-users"></i>Users
+ <% end %>
 </li>
 <li class="nav-item">
- <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+ <%= link_to books_path, class: 'nav-link text-light' do %><i class="fas fa-book-open"></i>Books
+ <% end %>
 </li>
 <li class="nav-item">
- <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+ <%= link_to destroy_user_session_path,  method: :delete, class: 'nav-link text-light' do %><i class="fas fa-sign-out-alt"></i>Logout
+ <% end %>
 </li>

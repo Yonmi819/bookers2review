@@ -1,6 +1,16 @@
-<li>
- <% link_to "新規登録",new_user_registration_path %>
+<li class="nav-item">
+ <%= link_to root_path, class: 'nav-link text-light' do %><i class="fas fa-home"></i>Home
+ <% end %>
 </li>
-<li>
- <% link_to "ログイン",new_user_session_path %>
+<li class="nav-item">
+ <%= link_to about_path, class: 'nav-link text-light' do %><i class="fas fa-link"></i>About
+ <% end %>
+</li>
+<li class="nav-item">
+ <%= link_to new_user_registration_path, class: 'nav-link text-light' do %><i class="fas fa-user-plus"></i>Sign up
+ <% end %>
+</li>
+<li class="nav-item">
+ <%= link_to new_user_session_path, class: 'nav-link text-light' do %><i class="fas fa-sign-in-alt"></i>Log in
+ <% end %>
 </li>
