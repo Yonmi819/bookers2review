@@ -7,11 +7,16 @@
   </tr>
   <tr>
    <th>name</th>
-   <th><% user.name %></th>
+   <th><%= user.name %></th>
   </tr>
   <tr>
    <th>introduction</th>
-   <th><% user.introduction %></th>
+   <th><%= user.introduction %></th>
   </tr>
  </tbody>
 </table>
+<!-- アクセス制限後程 -->
+<div class="row">
+ <%= link_to edit_user_path(user), class: 'btn btn-outline-secondary btn-block' do %> <i class="fas fa-user-cog"></i>
+ <% end %>
+</div>
