@@ -1,0 +1,24 @@
+<table class='table table-hover table-inverse'>
+ <thead>
+  <tr>
+   <th>Image</th>
+   <th>Name</th>
+   <th colspan="2"></th>
+  </tr>
+ </thead> 
+ <tbody>
+  <% users.each do |user| %>
+   <tr>
+    <td>
+     <%= image_tag user.get_profile_image(80,80) %>
+    </td>
+    <td>
+     <%= user.name %>
+    </td>
+    <td>
+     <%= link_to 'show', user_path(user) %>
+    </td>
+   </tr>
+  <% end %>
+ </tbody>
+</table>
