@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def index
     @users = User.all
-    @user = User.find(params[:id])
+    @user = current_user
     @book = Book.new
   end
 
@@ -13,6 +13,10 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    #現在ログインしているユーザーが他のユーザー情報を変更できないようアクセス制限をかける
+   unless @user == current_user
+     redirect_to user_path(current_user)
+   end
   end
   
   private
