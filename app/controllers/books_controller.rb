@@ -13,6 +13,7 @@ class BooksController < ApplicationController
   end
 
   def edit
+    @book = Book.find(params[:id])
   end
   
   def create
@@ -24,6 +25,17 @@ class BooksController < ApplicationController
      @books = Book.all
      @user = current_user
      render :index
+   end
+  end
+  
+  def update
+    @book = Book.find(params[:id])
+   if @book.update(book_params)
+      flash[:notice] = "投稿を編集に成功しました"
+      redirect_to book_path(@book)
+   else
+      flash.now[:alert] = "必要事項を入力してください"
+      render :edit
    end
   end
   
