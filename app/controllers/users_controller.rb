@@ -22,17 +22,17 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
    if @user.update(user_params)
-      flash[:notice] = "ユーザーを編集しました"
-      redirect_to user_path(@user)
+     flash[:notice] = "ユーザーを編集しました"
+     redirect_to user_path(@user)
    else
-      flash.now[:alert] = "必要事項を入力してください"
-      render :edit
+     flash.now[:alert] = "必要事項を入力してください"
+     render :edit
    end
   end
  
   private
   
   def user_params
-   params.require(:user).permit(:name, :introduction, :profile_image)
+    params.require(:user).permit(:name, :introduction, :profile_image)
   end
 end
