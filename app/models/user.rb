@@ -1,15 +1,18 @@
 class User < ApplicationRecord
+#モデルの関連付け
   has_many :books, dependent: :destroy
+  has_many :book_comments, dependent: :destroy
+  has_many :favorites, dependent: :destroy
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
  
-  #バリデーション
+#バリデーション
   validates :name, uniqueness: true, length: { minimum: 2, maximum: 20 }
   validates :introduction, length: { maximum: 50 }
   
-  #プロフィール画像を扱うための記述
+#プロフィール画像を扱うための記述
   has_one_attached :profile_image
   
   def get_profile_image(width, height)
