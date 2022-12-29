@@ -6,11 +6,15 @@
     <%= link_to book.user.name ,user_path(book.user) %>
    </td>
    <td><%= book.title %></td>
-   <td><%= book.body %></td>
-    <% if book.user.id == current_user.id %>
+   <td>
+    <%= book.body %></td>
+   <td class="favorite_btn">
+    <%= render 'favorites/form', book: @book %>
+   </td>
+   <% if book.user.id == current_user.id %>
    <td><%= link_to 'Edit', edit_book_path(book), class: 'btn btn-sm btn-success' %></td>
    <td><%= link_to 'Destroy', book_path(book), class: 'btn btn-sm btn-danger', method: :delete, data: {confirm: "本当に削除しますか？"} %></td>
-    <% end %>
+   <% end %>
   </tr>
  </tbody>
 </table>
