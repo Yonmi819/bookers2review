@@ -1,0 +1,7 @@
+<%= form_with model:[book, book_comment], url: book_book_comments_path(book), local: false do |f| %>
+  <div class="form-group">
+   <%= f.text_area :comment, placeholder: "コメントをここに", class: "form-control comment-textarea", rows: '5' %>
+     <%= f.submit "送信" , class: " m-1 btn btn-primary btn-sm" %>
+  </div>
+<% end %>
+
