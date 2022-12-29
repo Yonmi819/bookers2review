@@ -2,13 +2,19 @@
  <div class="row">
   <div class="col-md-3">
    <h2>User info</h2>
-   <%= render 'users/info', user: @user %>
+    <%= render 'users/info', user: @user %>
    <h2>New Book</h2>
-   <%= render 'books/form', book: @newbook %>
+    <%= render 'books/form', book: @newbook %>
   </div>
   <div class="col-md-8 offset-md-1">
    <h2>Book detail</h2>
-   <%= render 'books/show', book: @book %>
+    <%= render 'books/show', book: @book %>
+   <div class="comment_area">
+    <%= render 'book_comments/form', book: @book, book_comment: @book_comment %>
+   </div>
+   <div class="comments_index">
+    <%= render 'book_comments/index', book: @book %>
+   </div>
   </div>
  </div>
 </div>
