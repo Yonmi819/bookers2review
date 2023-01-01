@@ -24,7 +24,10 @@
     <td id="favorite_buttons_<%= book.id %>">
      <%= render 'favorites/form', book: book %>
     </td>
-   </tr>
+    <td>
+     <%= render 'book_comments/count', book: book %>
+    </td>
+  </tr>
   <% end %>
  </tbody>
 </table>

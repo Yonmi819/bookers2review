@@ -9,7 +9,10 @@
    <td>
     <%= book.body %></td>
    <td class="favorite_btn">
-    <%= render 'favorites/form', book: @book %>
+    <%= render 'favorites/form', book: book %>
+   </td>
+   <td class="comments_counter">
+    <%= render 'book_comments/count', book: book %>
    </td>
    <% if book.user.id == current_user.id %>
    <td><%= link_to 'Edit', edit_book_path(book), class: 'btn btn-sm btn-success' %></td>
